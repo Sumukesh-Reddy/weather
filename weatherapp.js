@@ -21,8 +21,6 @@ let weather = {
         const { temp, feels_like } = data.main;
         const { humidity } = data.main;
         const { speed } = data.wind;
-
-        // Clear previous results
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
@@ -41,11 +39,8 @@ let weather = {
     },
     showLoading: function () {
         document.querySelector(".city").innerText = "Loading...";
-        document.querySelector(".icon").src = ""; // Clear previous icon
+        document.querySelector(".icon").src = ""; 
     },
-    hideLoading: function () {
-        // You can add any additional UI logic here
-    }
 };
 
 document.querySelector(".button").addEventListener("click", function () {
